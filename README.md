@@ -2,6 +2,8 @@
 
 Silence your Rails logs under certain conditions.
 
+![](https://raw.githubusercontent.com/raul/log_shusher/master/shusher.jpg)
+
 Add the following code in an initializer (e.g: `config/initializers/log_shusher.rb`) or in an environment configuration file (e.g: `config/environments/development.rb`):
 
 ```ruby
