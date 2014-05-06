@@ -30,17 +30,20 @@ end
 
 The `env` parameter is the [Rack environment hash](http://rack.rubyforge.org/doc/SPEC.html) corresponding to the current request. The request will be logged if the expression inside the block evaluates to `nil` or `false`.
 
-Example: don't log any request
+Examples:
 
 ```ruby
+# Don't log any request
 LogShusher.shush do |env|
   true
 end
-```
 
-Example: don't log requests for certain file extensions
+# Don't log asset requests
+LogShusher.shush do |env|
+  env['PATH_INFO'].to_s.include? '/assets/'
+end
 
-```ruby
+# Don't log requests for certain file extensions
 LogShusher.shush do |env|
   exts = %w{ .ico .js .css .gif .png .jpeg .jpg }
   exts.any? { |ext| env['PATH_INFO'].to_s.ends_with?(ext) }
