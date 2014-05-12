@@ -9,7 +9,7 @@ Silence your Rails logs under certain conditions.
 Add the gem to your `Gemfile`:
 
 ```ruby
-gem 'log_susher'
+gem 'log_shusher'
 ```
 
 and run
